@@ -99,7 +99,7 @@ namespace Simd
             Store<align>((__m128i*)v, _mm_packus_epi16(ConvertV16(_b16_r16[0][0], _g16_1[0][0]), ConvertV16(_b16_r16[0][1], _g16_1[0][1])));
         }
 
-        template <bool align> void BgraToYuv420p(const uint8_t * bgra, size_t width, size_t height, size_t bgraStride, uint8_t * y, size_t yStride,
+        template <bool align> SIMD_INLINE void BgraToYuv420p(const uint8_t * bgra, size_t width, size_t height, size_t bgraStride, uint8_t * y, size_t yStride,
             uint8_t * u, size_t uStride, uint8_t * v, size_t vStride)
         {
             assert((width%2 == 0) && (height%2 == 0) && (width >= DA) && (height >= 2));
@@ -158,7 +158,7 @@ namespace Simd
             Store<align>((__m128i*)v, _mm_packus_epi16(ConvertV16(_b16_r16[0], _g16_1[0]), ConvertV16(_b16_r16[1], _g16_1[1])));
         }
 
-        template <bool align> void BgraToYuv422p(const uint8_t * bgra, size_t width, size_t height, size_t bgraStride, uint8_t * y, size_t yStride,
+        template <bool align> SIMD_INLINE void BgraToYuv422p(const uint8_t * bgra, size_t width, size_t height, size_t bgraStride, uint8_t * y, size_t yStride,
             uint8_t * u, size_t uStride, uint8_t * v, size_t vStride)
         {
             assert((width%2 == 0) && (width >= DA));
@@ -214,7 +214,7 @@ namespace Simd
             Store<align>((__m128i*)v, _mm_packus_epi16(ConvertV16(_b16_r16[0], _g16_1[0]), ConvertV16(_b16_r16[1], _g16_1[1])));
         }
 
-        template <bool align> void BgraToYuv444p(const uint8_t * bgra, size_t width, size_t height, size_t bgraStride, uint8_t * y, size_t yStride,
+        template <bool align> SIMD_INLINE void BgraToYuv444p(const uint8_t * bgra, size_t width, size_t height, size_t bgraStride, uint8_t * y, size_t yStride,
             uint8_t * u, size_t uStride, uint8_t * v, size_t vStride)
         {
             assert(width >= A);
